@@ -1,0 +1,33 @@
+﻿@model E_Ticaret.Models.Kategori
+
+@{
+    ViewBag.Title = "Kategori Sil";
+}
+
+<h2>Kategori Sil</h2>
+
+
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Kategori
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <h5>Kategoriyi Silmek İstediğinize Emin Misiniz?</h5>
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

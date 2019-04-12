@@ -1,0 +1,63 @@
+﻿@model IEnumerable<E_Ticaret.Models.SiparisDetay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Siparis Setay</h2>
+
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RefSepetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimEdildi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sepet.RefKulID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sipari.RefKulID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RefSepetID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeslimEdildi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sepet.RefKulID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sipari.RefKulID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Urunler.UrunAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.SiparisDetayID }) |
+            @Html.ActionLink("Ayrıntılar", "Details", new { id=item.SiparisDetayID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.SiparisDetayID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model E_Ticaret.Models.Urunler
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Ayrıntılar</h2>
+
+<div>
+    <h4>Urunler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Ürün Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+          Ürün Açıklaması 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklamasi)
+        </dd>
+
+        <dt>
+          Ürün Fiyatı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+      Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.UrunID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>
